@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruppe 3 - Lydpladsen | Designguide & Inspiration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <!-- Top overskrift -->
+        <header class="header">
+            <span class="badge">APP & BRANDGUIDE</span>
+            <h1>GRUPPE 3 - LYDPLADSEN</h1>
+        </header>
+
+        <!-- Mørkt banner -->
+        <section class="banner banner-dark">
+            <img src="img/Lydpladsen hvidt.png" alt="Lydpladsen logo hvidt" class="wordmark-img">
+            <img src="img/Logo hvidt.png" alt="Lydpladsen app ikon hvidt" class="icon-img">
+        </section>
+
+        <!-- Lyst banner -->
+        <section class="banner banner-light">
+            <img src="img/Lydpladsen mørkt.png" alt="Lydpladsen logo mørkt" class="wordmark-img">
+            <img src="img/Logo mørkt.png" alt="Lydpladsen app ikon mørkt" class="icon-img">
+        </section>
+
+        <!-- Typografi & 3D sektion -->
+        <section class="typography">
+            <p class="font-sample font-roskilde">ROSKILDE 4000</p>
+
+            <div class="logo-and-3d-row">
+                <div class="green-logo-wrapper">
+                    <img src="img/Logo grønt.png" alt="Lydpladsen grønt ikon" class="icon-green-img">
+                </div>
+
+                <model-viewer src="Trumme færdig.glb 2.0.glb" alt="3D model af tromme" camera-controls auto-rotate
+                    camera-orbit="0deg 25deg auto" exposure="1.2" tone-mapping="neutral" shadow-intensity="1"
+                    class="tromme-3d">
+                </model-viewer>
+
+            </div>
+        </section>
+
+
+        <hr class="divider">
+
+        <!-- Inspirations- og stemningssektion -->
+        <section class="inspiration-section">
+            <div class="inspiration-header">
+                <h2> Områder</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Alle</button>
+                    <button class="filter-btn" data-filter="inventar">Inventar & Miljø</button>
+                    <button class="filter-btn" data-filter="former">Former & Udtryk</button>
+                </div>
+            </div>
+
+            <div class="moodboard-grid">
+                <div class="mood-card" data-category="inventar">
+                    <img src="img/Dj booth.jpg" alt="DJ booth">
+                    <div class="card-caption">DJ Booth</div>
+                </div>
+                <div class="mood-card" data-category="inventar">
+                    <img src="img/Containere.jpg" alt="Containere">
+                    <div class="card-caption">Containere</div>
+                </div>
+                <div class="mood-card" data-category="inventar">
+                    <img src="img/Hængekøje.jpg" alt="Hængekøje">
+                    <div class="card-caption">Hængekøje</div>
+                </div>
+                <div class="mood-card" data-category="inventar">
+                    <img src="img/Bænk.jpg" alt="Bænk">
+                    <div class="card-caption">Bænk</div>
+                </div>
+                <div class="mood-card" data-category="inventar">
+                    <img src="img/Bænk 2.jpg" alt="">
+                    <div class="card-caption">Armgangsstativ</div>
+                </div>
+                <div class="mood-card" data-category="former">
+                    <img src="img/Runde forme.jpg" alt="Plads">
+                    <div class="card-caption">Plads</div>
+                </div>
+                <div class="mood-card" data-category="former">
+                    <img src="img/firkandtede forme.jpg" alt="Vand">
+                    <div class="card-caption">Vand forme</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
