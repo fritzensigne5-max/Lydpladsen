@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // All available 3D models
 const models = [
-    "./model1.glb",
-    "./model2.glb",
-    "./model3.glb",
-    "./model4.glb",
-    "./model5.glb"
+    "models/model1.glb",
+    "models/model2.glb",
+    "models/model3.glb",
+    "models/model4.glb",
+    "models/model5.glb"
 ];
 
 const viewer = document.getElementById("mainModel");
