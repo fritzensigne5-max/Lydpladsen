@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  
+
   // 2. Farvebokse og toast-besked
   const colorBoxes = document.querySelectorAll('.color-box');
   const toast = document.getElementById('toast');
@@ -57,6 +59,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+// All available 3D models
+const models = [
+    "./model1.glb",
+    "./model2.glb",
+    "./model3.glb",
+    "./model4.glb",
+    "./model5.glb"
+];
+
+const viewer = document.getElementById("mainModel");
+const prevButton = document.getElementById("prevModel");
+const nextButton = document.getElementById("nextModel");
+const counter = document.getElementById("modelCounter");
+
+let currentModel = 0;
+
+function changeModel(index) {
+
+    // Loop around when reaching the beginning or end
+    currentModel = (index + models.length) % models.length;
+
+    // Load selected model
+    viewer.src = models[currentModel];
+
+}
+
+// Previous arrow
+prevButton.addEventListener("click", () => {
+    changeModel(currentModel - 1);
+});
+
+// Next arrow
+nextButton.addEventListener("click", () => {
+    changeModel(currentModel + 1);
+});
 
   // 4. Lightbox
   const lightbox = document.getElementById('lightbox');
@@ -117,4 +155,46 @@ document.addEventListener('DOMContentLoaded', () => {
   appleMeta.name = 'apple-mobile-web-app-capable';
   appleMeta.content = 'yes';
   document.head.appendChild(appleMeta);
+});
+
+const galleryImages = document.querySelectorAll('.mood-card img');
+const lightbox = document.getElementById('imageLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const closeButton = document.querySelector('.lightbox-close');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+
+        const caption = img.parentElement.querySelector('.card-caption');
+
+        lightboxCaption.textContent = caption
+            ? caption.textContent
+            : img.alt;
+
+        lightbox.classList.add('show');
+
+    });
+});
+
+// Close using X button
+closeButton.addEventListener('click', () => {
+    lightbox.classList.remove('show');
+});
+
+// Close when clicking outside the image
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove('show');
+    }
+});
+
+// Close using Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        lightbox.classList.remove('show');
+    }
 });

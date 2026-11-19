@@ -160,6 +160,10 @@ body {
     border-radius: 16px;
 }
 
+.model-navigation {
+    display: flex;
+    justify-content: space-between;
+}
 .divider {
     border: none;
     border-top: 3px solid var(--groen);
@@ -261,36 +265,63 @@ body {
     font-size: 14px;
 }
 
+.mood-card img {
+    cursor: pointer;
+}
+
+/* Lightbox background */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
     inset: 0;
-    background: rgba(24, 22, 44, 0.92);
-    flex-direction: column;
-    align-items: center;
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.92);
+
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 30px;
+    box-sizing: border-box;
 }
 
-.lightbox.open {
+/* Show lightbox */
+.lightbox.show {
     display: flex;
 }
 
-.lightbox p {
-    color: var(--hvid);
-    margin-top: 15px;
-    font-size: 18px;
+/* Full-size image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: default;
 }
 
-.close-lightbox {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    color: var(--gul);
-    font-size: 36px;
-    cursor: pointer;
+/* Image caption */
+#lightboxCaption {
+    color: white;
+    margin-top: 15px;
+    font-size: 16px;
 }
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    background: transparent;
+    border: none;
+    color: white;
+
+    font-size: 40px;
+    cursor: pointer;
+}   
 
 .toast {
     position: fixed;
@@ -313,21 +344,46 @@ body {
 }
 
 
-/*7. 3d design*/
+/* 3d design*/
 .logo-and-3d-row {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.tromme-3d {
-    flex: 1;
-    height: 210px;
-    background-color: #f4f4f4;
-    border-radius: 16px;
+#mainModel{
+    display: block;
+
+    width: 100%;
+    min-width: 500px;
+    height: 300px;
+    min-height: 280px;
+    border-radius: 12.5%;
 }
 
-/* 8. MOBIL */
+.model-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.model-navigation button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+
+/* MOBIL */
 @media (max-width: 650px) {
     .banner {
         flex-direction: column;
@@ -347,5 +403,98 @@ body {
         width: 100%;
         max-width: 250px;
         margin: 0 auto;
+    }
+    .logo-and-3d-row {
+        height: 250px;
+    }
+    .green-logo-wrapper {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+        .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+    }
+
+    #mainModel{
+    width: 100%;
+    min-width: 500px;
+    height: 200px;
+    min-height: 150px;
+    }
+}
+
+@media (max-width: 550px) {
+    #mainModel {
+        width: 100%;
+        min-width: 350px;
+        height: 200px;
+        min-height: 150px;
+    }
+    .green-logo-wrapper {
+        min-width: 75px;
+        min-height: 75px;
+    }
+}
+
+@media (max-width: 500px) {
+    #mainModel {
+        width: 100%;
+        min-width: 285px;
+        height: 200px;
+        min-height: 150px;
+    }
+    .green-logo-wrapper {
+        min-width: 75px;
+        min-height: 75px;
+    }
+}
+
+@media (max-width: 450px) {
+    #mainModel {
+        width: 100%;
+        min-width: 250px;
+        height: 200px;
+        min-height: 150px;
+    }
+    .green-logo-wrapper {
+        min-width: 50px;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    #mainModel {
+        width: 100%;
+        min-width: 200px;
+        height: 200px;
+        min-height: 150px;
+    }
+    .green-logo-wrapper {
+        min-width: 50px;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    #mainModel {
+        width: 100%;
+        min-width: 175px;
+        height: 200px;
+        min-height: 150px;
+    }
+    .green-logo-wrapper {
+        min-width: 35px;
+        min-height: 35px;
     }
 }
