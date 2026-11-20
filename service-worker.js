@@ -8,8 +8,8 @@ const FILES_TO_CACHE = [
   "./style.css",
   "./script.js",
   "./manifest.json",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icons/logo-192.png",
+  "./icons/logo-512.png"
 ].map(file => new URL(file, BASE_URL).href);
  
 self.addEventListener("install", event => {
