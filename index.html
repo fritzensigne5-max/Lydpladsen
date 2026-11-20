@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/Lydpladsen/manifest.json">
     <meta name="theme-color" content="#c7dd8c">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppe 3 - Lydpladsen | Designguide & Inspiration</title>
     <link rel="stylesheet" href="style.css">
@@ -172,23 +171,22 @@
             <p id="lightboxCaption"></p>
         </div>
     </main>
-
-
- 
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js")
-      .then(registration => {
-        console.log("Lydpladsen PWA registered!");
-      })
-      .catch(error => {
-        console.error("PWA registration failed:", error);
-      });
-  });
+    <script>
+        if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register(
+            "/Lydpladsen/service-worker.js",
+            { scope: "/Lydpladsen/" }
+        )
+        .then(registration => {
+            console.log("Lydpladsen PWA is registered!", registration);
+        })
+        .catch(error => {
+            console.error("Service Worker error:", error);
+        });
+    });
 }
-</script>
- 
+    </script>
 </body>
 
 </html>
